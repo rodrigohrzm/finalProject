@@ -1,7 +1,7 @@
-function Table() {
+function Booking() {
     return (
       <div>
       </div>
     )};
 
-  export default Table;
+  export default Booking;

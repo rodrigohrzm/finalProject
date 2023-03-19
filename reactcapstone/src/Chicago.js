@@ -1,4 +1,4 @@
-function Description() {
+function Chicago() {
     return (
       <div class="titleBar">
         <h1>Book a Table</h1>
@@ -6,4 +6,4 @@ function Description() {
       </div>
     )};
 
-  export default Description;
+  export default Chicago;

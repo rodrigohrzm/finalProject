@@ -3,10 +3,12 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import { BrowserRouter } from 'react-router-dom';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
+    <BrowserRouter>
           <meta name="book a table page"/>
           <meta name="Booking" />
           <meta name="author" content="Rodrigo" />
@@ -16,6 +18,7 @@ root.render(
           <meta name="og:title" content="Little Lemon: Booking"/>
           <meta name="og:image" content={"./assets/restaurantchefB.jpg"}/>
     <App />
+    </BrowserRouter>
   </React.StrictMode>
 );
 

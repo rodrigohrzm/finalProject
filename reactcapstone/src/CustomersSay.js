@@ -1,4 +1,4 @@
-function Reviews() {
+function CustomersSay() {
     return (
       <div class="titleBar">
         <h1>Book a Table</h1>
@@ -6,4 +6,4 @@ function Reviews() {
       </div>
     )};
 
-  export default Reviews;
+  export default CustomersSay;

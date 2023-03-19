@@ -1,4 +1,5 @@
 import {ReactComponent as Logo} from './assets/Logo.svg';
+import { Link } from "react-router-dom"
 
 function Nav() {
     return (
@@ -6,12 +7,12 @@ function Nav() {
       <Logo />
       <nav>
         <ul>
-          <li><a href={"https://littlelemonrestaurant.com"}>Home</a></li>
-          <li><a href={"https://littlelemonrestaurant.com/about"}>About</a></li>
-          <li><a href={"https://littlelemonrestaurant.com/menu"}>Menu</a></li>
-          <li><a href={"https://littlelemonrestaurant.com/booking"}>Reservations</a></li>
-          <li><a href={"https://littlelemonrestaurant.com/orders"}>Order Online</a></li>
-          <li><a href={"https://littlelemonrestaurant.com/login"}>Login</a></li>
+          <li><Link to={"/"}>Home</Link></li>
+          <li><Link to={"/"}>About</Link></li>
+          <li><Link to={"/"}>Menu</Link></li>
+          <li><Link to={"/booking"}>Reservations</Link></li>
+          <li><Link to={"/"}>Order Online</Link></li>
+          <li><Link to={"/"}>Login</Link></li>
         </ul>
       </nav>
       </div>
