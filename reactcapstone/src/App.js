@@ -1,21 +1,29 @@
 import './App.css';
 import React from 'react';
-import Header from './Header';
+import Routes from 'react';
 import Nav from './Nav';
-import Title from './Title';
-import Table from './Table';
-import Contact from './Contact';
+import HomePage from './HomePage';
+import BookingPage from './BookingPage';
 import Footer from './Footer';
 
 function App() {
   return (
-    <>
-      <Header />
+    <> // header?
       <Nav />
       <main>
-        <Title />
-        <Table />
-        <Contact />
+        <Routes>
+          <Route path="/" element={<HomePage />}></Route>
+          <Route path="/booking" element={<BookingPage />}></Route>
+        </Routes>
+        {/* <HomePage /> */} // renombrar los archivos primero
+          {/* <CallToAction /> */}
+          {/* <Specials /> */}
+          {/* <CustomersSay /> */}
+          {/* <Chicago  /> */}
+        {/* <BookingPage /> */}
+          {/* <Title /> */}
+          {/* <Table /> */}
+          {/* <Contact /> */}
       </main>
       <Footer />
     </>
