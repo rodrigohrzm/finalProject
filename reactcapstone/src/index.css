@@ -11,3 +11,39 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+/* Estilos del Footer */
+
+footer {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  background-color: #495e57;
+  justify-content: center;
+  padding: 50px 50px 50px 0px;
+}
+
+footer li {
+  margin-top: 12px;
+  list-style-type:none;
+}
+
+footer a {
+  text-decoration: none;
+  color:#edefee;
+}
+
+.footerPic img {
+  border-radius: 8%;
+  margin-right: 2vw;
+  margin-left: -5vw;
+}
+
+.footerLinks {
+  margin-left: 5vw;
+}
+
+.footerTitle {
+  font-weight: bold;
+  color: #edefee;
+}
