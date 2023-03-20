@@ -3,7 +3,7 @@ import { Link } from "react-router-dom"
 function Footer() {
     return (
       <footer>
-        <img class="footerPic" src={require("./assets/restauranfood.jpg")} width="160" />
+        <img class="footerPic" src={require("./assets/restaurantchefB.jpg")} width="160" />
         <div class="footerLinks">
           <p class="footerTitle">NAVIGATION</p>
           <ul>
