@@ -58,6 +58,50 @@ code {
   padding: 0 5px;
 }
 
+/* Mid styles */
+
+/* .chicagoDesc {
+  display:grid;
+  grid-template-columns: 2;
+  grid-auto-flow: auto;
+  justify-content:center;
+  padding: 15px 0;
+} */
+
+.chicagoDesc {
+  display:flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 15px 0;
+  margin: 0 200px;
+}
+
+.chicagoDesc h2 {
+  font-size: 2.4em;
+  color:#333333;
+}
+
+.chicagoDesc h3 {
+  font-size: 1.5em;
+  margin: -25px 0 0 0;
+  color: #f4ce14;
+}
+
+.chicagoDesc p {
+  font-size: 1em;
+  margin: 30px 0 0 0;
+}
+
+.chicagoDesc img {
+  border-radius: 16px;
+  width: 180px;
+  height: 300px;
+  object-fit: cover;
+  padding: 0 5px;
+}
+
+
 /* Footer Styles*/
 
 Footer {
