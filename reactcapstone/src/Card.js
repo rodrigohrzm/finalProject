@@ -1,3 +1,4 @@
+import {ReactComponent as Basket} from './assets/Basket.svg';
 import { Link } from "react-router-dom"
 import React from "react"
 
@@ -13,9 +14,17 @@ import React from "react"
 //   </Box>
 // )};
 
-const Card = ({ title, description, imageSrc }) => {
+const Card = ({ title, price, description, imageSrc }) => {
     return(
-        <h1>Hi</h1>
+        <div class="cardContainer">
+            <img src={imageSrc} />
+            <text>{title}</text>
+            <text>{price}</text>
+            <text>{description}</text>
+            <button><Link to={"/"}>
+                Online Menu <Basket />
+            </Link></button>
+        </div>
     );
 }
 

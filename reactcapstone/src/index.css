@@ -136,10 +136,13 @@ code {
   flex-direction: row;
   flex-wrap: nowrap;
   align-items: center;
-  justify-content: space-evenly;
+  justify-content: space-between;
+  max-width: 1000px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0 1vw 0 1vw;
   color:#333333;
   font-size: 32px;
-  margin: 0 8vw;
 }
 
 .topArea button {
@@ -160,8 +163,28 @@ code {
   color:black;
 }
 
-.Card {
+.cardsGrid {
+  display:flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content:space-evenly;
+  max-width: 1000px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.cardContainer {
   background-color: #edefee;
+  max-width: 250px;
+  margin: 40px 0px 40px 0px;
+}
+
+.cardContainer img {
+  height: 160px;
+  width: 250px;
+  object-fit: cover;
+  border-radius: 16px 16px 0px 0px;
+  transform: translateY(-20px);
 }
 
 .chicagoDesc {
@@ -216,7 +239,7 @@ Footer {
   flex-wrap: wrap;
   background-color: #495e57;
   justify-content: center;
-  padding: 50px 50px 50px 0px;
+  padding: 65px 50px 50px 0px;
   margin-top: 1px;
 }
 

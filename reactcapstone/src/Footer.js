@@ -5,7 +5,7 @@ function Footer() {
       <footer>
         <img class="footerPic" src={require("./assets/restaurantchefB.jpg")} width="160" />
         <div class="footerLinks">
-          <p class="footerTitle">NAVIGATION</p>
+          <text class="footerTitle">NAVIGATION</text>
           <ul>
           <li><Link to={"/"}>Home</Link></li>
           <li><Link to={"/"}>About</Link></li>
@@ -16,7 +16,7 @@ function Footer() {
           </ul>
         </div>
         <div class="footerLinks">
-          <p class="footerTitle">CONTACT INFO</p>
+          <text class="footerTitle">CONTACT INFO</text>
           <ul>
           <li><Link to={"/"}>Address</Link></li>
           <li><Link to={"/"}>Telephone</Link></li>
@@ -24,7 +24,7 @@ function Footer() {
         </ul>
         </div>
         <div class="footerLinks">
-          <p class="footerTitle">SOCIAL MEDIA</p>
+          <text class="footerTitle">SOCIAL MEDIA</text>
           <ul>
           <li><Link to={"/"}>Facebook</Link></li>
           <li><Link to={"/"}>LinkedIn</Link></li>
