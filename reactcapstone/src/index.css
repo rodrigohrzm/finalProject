@@ -181,12 +181,11 @@ code {
   max-width: 250px;
   margin: 40px 0px 40px 0px;
   padding: 25px;
-  display: grid;
-  grid-template: "a a b" auto "c c c" auto  "d d d" auto;
+  position: relative;
 }
 
 .cardContainer img {
-  height: 160px;
+  height: 200px;
   width: 250px;
   object-fit: cover;
   border-radius: 16px 16px 0px 0px;
@@ -194,7 +193,30 @@ code {
   margin: -25px -25px 0px -25px;
 }
 
+.cardTop {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin: -10% 0 0 0;
+}
+
+.cardContainer h3 {
+  font-size: 16px;
+}
+
+.cardContainer text {
+  color: #ee9972;
+  font-weight: 600;
+}
+
+.cardContainer p {
+  color: #495e57;
+  font-size: 14px;
+  padding-bottom: 60px;
+}
+
 .cardContainer button {
+  float: left;
   background-color: #edefee;
   border: none;
   color: black;
@@ -204,19 +226,48 @@ code {
   text-align: center;
   text-decoration: none;
   border-radius: 16px;
+  position: absolute;
+  bottom: 20px;
+  left: 22px;
 }
 
 .cardContainer a {
   text-decoration: none;
   color:#333333;
-  font-size: 14px;
+  font-size: 13px;
 }
 
-.ico {
+.cardIco {
   height: 14px;
   width: 14px;
   transform: translateY(2px);
   margin-left: 5px;
+}
+
+.reviewArea {
+  background-color: #edefee;
+}
+
+.reviewGrid {
+  display:flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content:space-evenly;
+  max-width: 1000px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.reviewBlock {
+  background-color: #f4ce14;
+  height: 200px;
+  width: 200px;
+}
+
+.reviewBlock img {
+  height: 80px;
+  width: 80px;
+  object-fit:cover;
 }
 
 .chicagoDesc {
@@ -272,6 +323,7 @@ footer {
   background-color: #495e57;
   justify-content: center;
   padding: 65px 50px 50px 0px;
+  margin-left: -5vw;
   margin-top: 1px;
 }
 
@@ -285,18 +337,21 @@ footer a {
   color:#edefee;
 }
 
-.footerPic {
+footer img {
+  width: 160px;
+  height: 250px;
+  object-fit: cover;
   border-radius: 16px;
   margin-right: 2vw;
-  margin-left: -5vw;
   object-fit: cover;
+  margin-bottom: 20px;
 }
 
 .footerLinks {
   margin-left: 5vw;
 }
 
-.footerTitle {
+footer text {
   font-weight: bold;
   color: #f4ce14;
 }

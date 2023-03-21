@@ -3,9 +3,9 @@ import { Link } from "react-router-dom"
 function Footer() {
     return (
       <footer>
-        <img class="footerPic" src={require("./assets/restaurantchefB.jpg")} width="160" />
+        <img src={require("./assets/restaurantchefB.jpg")}/>
         <div class="footerLinks">
-          <text class="footerTitle">NAVIGATION</text>
+          <text>NAVIGATION</text>
           <ul>
           <li><Link to={"/"}>Home</Link></li>
           <li><Link to={"/"}>About</Link></li>
@@ -16,7 +16,7 @@ function Footer() {
           </ul>
         </div>
         <div class="footerLinks">
-          <text class="footerTitle">CONTACT INFO</text>
+          <text>CONTACT INFO</text>
           <ul>
           <li><Link to={"/"}>Address</Link></li>
           <li><Link to={"/"}>Telephone</Link></li>
@@ -24,7 +24,7 @@ function Footer() {
         </ul>
         </div>
         <div class="footerLinks">
-          <text class="footerTitle">SOCIAL MEDIA</text>
+          <text>SOCIAL MEDIA</text>
           <ul>
           <li><Link to={"/"}>Facebook</Link></li>
           <li><Link to={"/"}>LinkedIn</Link></li>

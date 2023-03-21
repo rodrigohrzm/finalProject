@@ -6,11 +6,13 @@ const Card = ({ title, price, description, imageSrc }) => {
     return(
         <div class="cardContainer">
             <img src={imageSrc} />
-            <text>{title}</text>
-            <text>{price}</text>
-            <text>{description}</text>
+            <div class="cardTop">
+                <h3>{title}</h3>
+                <text>{price}</text>
+            </div>
+            <p>{description}</p>
             <button><Link to={"/"}>
-                Order a delivery <Basket class="ico" />
+                Order a delivery <Basket class="cardIco" />
             </Link></button>
         </div>
     );
