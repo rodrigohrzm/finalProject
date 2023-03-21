@@ -23,8 +23,11 @@ code {
   flex-direction: row;
   flex-wrap: wrap;
   background-color: #ffffff;
-  justify-content: center;
   padding: 20px 0px;
+  justify-content: center;
+  max-width: 1000px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .navBar li {
@@ -177,6 +180,9 @@ code {
   background-color: #edefee;
   max-width: 250px;
   margin: 40px 0px 40px 0px;
+  padding: 25px;
+  display: grid;
+  grid-template: "a a b" auto "c c c" auto  "d d d" auto;
 }
 
 .cardContainer img {
@@ -185,6 +191,32 @@ code {
   object-fit: cover;
   border-radius: 16px 16px 0px 0px;
   transform: translateY(-20px);
+  margin: -25px -25px 0px -25px;
+}
+
+.cardContainer button {
+  background-color: #edefee;
+  border: none;
+  color: black;
+  font-size: 16px;
+  font-weight: 700;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  text-align: center;
+  text-decoration: none;
+  border-radius: 16px;
+}
+
+.cardContainer a {
+  text-decoration: none;
+  color:#333333;
+  font-size: 14px;
+}
+
+.ico {
+  height: 14px;
+  width: 14px;
+  transform: translateY(2px);
+  margin-left: 5px;
 }
 
 .chicagoDesc {
@@ -233,7 +265,7 @@ code {
 
 /* Footer Styles*/
 
-Footer {
+footer {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
@@ -243,12 +275,12 @@ Footer {
   margin-top: 1px;
 }
 
-Footer li {
+footer li {
   margin-top: 12px;
   list-style-type:none;
 }
 
-Footer a {
+footer a {
   text-decoration: none;
   color:#edefee;
 }
