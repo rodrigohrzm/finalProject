@@ -8,10 +8,9 @@ const Card = ({ name, score, review, imageSrc }) => {
                 <h3>{name}</h3>
             </div>
             <div class="reviewText">
-                <p>{review}</p>
                 <text>{score}</text>
+                <p>{review}</p>
             </div>
-            
         </div>
     );
 }
