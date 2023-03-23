@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-function BookingForm() {
+function BookingForm({availabletimes}) {
 
    const handleSubmit = (e) => {
       e.preventDefault();
@@ -16,7 +16,6 @@ function BookingForm() {
    const [ guests , setGuests ] = useState ("");
    const [ occasion , setOccasion ] = useState ("");
    const [ location , setLocation ] = useState ("");
-   const [ availabletimes , setAvailabletimes ] = useState (['17:00', '18:00', '19:00', '20:00', '21:00', '22:00', '23:00']);
 
    let tempstyle = {
       display: "grid",
@@ -27,22 +26,18 @@ function BookingForm() {
       gap: "20px",
    };
 
+   let submitstyle = {
+      width: "30vh",
+      marginLeft: "auto",
+      marginRight: "auto"
+   };
+
     return (
         <form style={tempstyle} onSubmit={handleSubmit}>
          <fieldset>
             <label htmlFor="res-date">Choose date</label>
                <input type="date" id="res-date" value={date} onChange={(e => setDate(e.target.value))} />
             <label htmlFor="res-time">Choose time</label>
-               <select id="res-time" value={time} onChange={(e => setTime(e.target.value))}>
-                  <option>17:00</option>
-                  <option>18:00</option>
-                  <option>19:00</option>
-                  <option>20:00</option>
-                  <option>21:00</option>
-                  <option>22:00</option>
-                  <option>23:00</option>
-               </select>
-               <label htmlFor="res-time">Choose time</label>
                <select id="res-time" value={time} onChange={(e => setTime(e.target.value))}>
                   {availabletimes.map((slot) => <option value={slot}>{slot}</option>)}
                </select>
@@ -62,7 +57,7 @@ function BookingForm() {
                <input type="radio" id="indoors" name="indoors" value="indoors" checked={location === "indoors"} onChange={(e => setLocation(e.target.value))}/>
                   <label htmlFor="indoors">Indoors</label>
          </fieldset>
-        <button type="submit">Submit reservation</button>
+        <button style={submitstyle} type="submit">Submit reservation</button>
         </form>
     )};
 

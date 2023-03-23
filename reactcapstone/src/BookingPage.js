@@ -1,11 +1,11 @@
 import Title from './Title';
 import BookingForm from './BookingForm';
 
-function BookingPage() {
+function BookingPage({availabletimes}) {
     return (
       <>
         <Title />
-        <BookingForm />
+        <BookingForm availabletimes={availabletimes}/>
       </>
     );
   }
