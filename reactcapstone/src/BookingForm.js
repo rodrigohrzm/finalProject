@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-function BookingForm({availabletimes}) {
+function BookingForm({availabletimes, settimes}) {
 
    const handleSubmit = (e) => {
       e.preventDefault();
@@ -36,7 +36,7 @@ function BookingForm({availabletimes}) {
         <form style={tempstyle} onSubmit={handleSubmit}>
          <fieldset>
             <label htmlFor="res-date">Choose date</label>
-               <input type="date" id="res-date" value={date} onChange={(e => setDate(e.target.value))} />
+               <input type="date" id="res-date" value={date} onChange={(e) => {setDate(e.target.value); settimes(date); console.log(date)}} />
             <label htmlFor="res-time">Choose time</label>
                <select id="res-time" value={time} onChange={(e => setTime(e.target.value))}>
                   {availabletimes.map((slot) => <option value={slot}>{slot}</option>)}
