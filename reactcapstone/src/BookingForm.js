@@ -32,11 +32,17 @@ function BookingForm({availabletimes, settimes}) {
       marginRight: "auto"
    };
 
+   function auxchild(event) {
+      const newDate = event.target.value;
+      setDate(newDate);
+      settimes(newDate);
+   }
+
     return (
         <form style={tempstyle} onSubmit={handleSubmit}>
          <fieldset>
             <label htmlFor="res-date">Choose date</label>
-               <input type="date" id="res-date" value={date} onChange={(e) => {setDate(e.target.value); settimes(date); console.log(date)}} />
+               <input type="date" id="res-date" value={date} /* onChange={(e) => {setDate(e.target.value); settimes(date)}}*/ onChange={auxchild}/>
             <label htmlFor="res-time">Choose time</label>
                <select id="res-time" value={time} onChange={(e => setTime(e.target.value))}>
                   {availabletimes.map((slot) => <option value={slot}>{slot}</option>)}
