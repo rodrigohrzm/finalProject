@@ -45,7 +45,7 @@ function BookingForm({availabletimes, settimes}) {
                <input type="date" id="res-date" value={date} /* onChange={(e) => {setDate(e.target.value); settimes(date)}}*/ onChange={auxchild}/>
             <label htmlFor="res-time">Choose time</label>
                <select id="res-time" value={time} onChange={(e => setTime(e.target.value))}>
-                  {availabletimes.map((slot) => <option value={slot}>{slot}</option>)}
+                  {availabletimes.map((slot) => <option key={slot} value={slot}>{slot}</option>)}
                </select>
          </fieldset>
          <fieldset>
@@ -53,9 +53,9 @@ function BookingForm({availabletimes, settimes}) {
                <input type="number" placeholder="1" min="1" max="10" id="guests" value={guests} onChange={(e => setGuests(e.target.value))} />
             <label htmlFor="occasion">Type of occasion</label>
                <select id="occasion" value={occasion} onChange={(e => setOccasion(e.target.value))}>
-                  <option>Birthday</option>
-                  <option>Anniversary</option>
-                  <option>Other</option>
+                  <option key="birthday" >Birthday</option>
+                  <option key="anniversary" >Anniversary</option>
+                  <option key="other" >Other</option>
                </select>
             <label>Location</label>
                <input type="radio" id="outdoors" name="outdoors" value="outdoors" checked={location === "outdoors"} onChange={(e => setLocation(e.target.value))}/>
