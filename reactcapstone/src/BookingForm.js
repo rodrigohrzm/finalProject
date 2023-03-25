@@ -1,21 +1,8 @@
 import React, { useState } from 'react';
+import { submitAPI } from "./FetchAPI";
+import { useNavigate } from 'react-router';
 
 function BookingForm({availabletimes, settimes}) {
-
-   const handleSubmit = (e) => {
-      e.preventDefault();
-      console.log(date);
-      console.log(time);
-      console.log(guests);
-      console.log(occasion);
-      console.log(location);
-   }
-
-   const [ date , setDate ] = useState ("");
-   const [ time , setTime ] = useState ("");
-   const [ guests , setGuests ] = useState ("");
-   const [ occasion , setOccasion ] = useState ("");
-   const [ location , setLocation ] = useState ("");
 
    let tempstyle = {
       display: "grid",
@@ -32,11 +19,25 @@ function BookingForm({availabletimes, settimes}) {
       marginRight: "auto"
    };
 
+   const [ date , setDate ] = useState ("");
+   const [ time , setTime ] = useState ("");
+   const [ guests , setGuests ] = useState ("");
+   const [ occasion , setOccasion ] = useState ("");
+   const [ location , setLocation ] = useState ("");
+
    function auxchild(event) {
       const newDate = event.target.value;
       setDate(newDate);
       settimes(newDate);
    }
+   const navigate = useNavigate();
+
+   const handleSubmit = (e) => {
+      e.preventDefault();
+      let formData = [date, time, guests, occasion, location];
+      if (submitAPI(formData) === true) {navigate("/confirmation");
+          } else { return null}
+      }
 
     return (
         <form style={tempstyle} onSubmit={handleSubmit}>
@@ -53,9 +54,10 @@ function BookingForm({availabletimes, settimes}) {
                <input type="number" placeholder="1" min="1" max="10" id="guests" value={guests} onChange={(e => setGuests(e.target.value))} />
             <label htmlFor="occasion">Type of occasion</label>
                <select id="occasion" value={occasion} onChange={(e => setOccasion(e.target.value))}>
-                  <option key="birthday" >Birthday</option>
-                  <option key="anniversary" >Anniversary</option>
-                  <option key="other" >Other</option>
+                  <option key="default" value="" selected disabled hidden >Select</option>
+                  <option key="birthday" value="birthday" >Birthday</option>
+                  <option key="anniversary" value="anniversary" >Anniversary</option>
+                  <option key="company" value="company" >Company event</option>
                </select>
             <label>Location</label>
                <input type="radio" id="outdoors" name="outdoors" value="outdoors" checked={location === "outdoors"} onChange={(e => setLocation(e.target.value))}/>
@@ -63,7 +65,7 @@ function BookingForm({availabletimes, settimes}) {
                <input type="radio" id="indoors" name="indoors" value="indoors" checked={location === "indoors"} onChange={(e => setLocation(e.target.value))}/>
                   <label htmlFor="indoors">Indoors</label>
          </fieldset>
-        <button style={submitstyle} type="submit">Submit reservation</button>
+        <button disabled={!occasion || !location || !guests || !time || !date} style={submitstyle} type="submit">Submit reservation</button>
         </form>
     )};
 

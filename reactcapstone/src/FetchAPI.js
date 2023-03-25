@@ -1,12 +1,3 @@
-import './App.css';
-import React from 'react';
-import { useReducer, useEffect, useState } from 'react';
-import { isRouteErrorResponse, Route, Routes } from 'react-router-dom';
-import Nav from './Nav';
-import HomePage from './HomePage';
-import BookingPage from './BookingPage';
-import Footer from './Footer';
-
 const seededRandom = function(seed) {
     var m = 2**35 - 31;
     var a = 185852;
@@ -40,4 +31,4 @@ const submitAPI = function(formData) {
     return true;
 };
 
-export {fetchAPI}
+export {fetchAPI, submitAPI}
