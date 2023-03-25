@@ -1,12 +1,26 @@
 import Title from './Title';
+import { useReducer } from 'react';
+import { fetchAPI } from "./FetchAPI";
 import BookingForm from './BookingForm';
 
-function BookingPage({availabletimes, settimes}) {
+function BookingPage() {
+
+  const [ freehours , dispatch ] = useReducer(updateTimes, ["Select a date first"]);
+
+  function updateTimes(freehours, userInput) {
+    return fetchAPI(userInput)
+  }
+
+  function checkInput(date) {
+    dispatch(date);
+  }
+
     return (
       <>
         <Title />
-        <BookingForm availabletimes={availabletimes} settimes={settimes}/>
+        <BookingForm availabletimes={freehours} settimes={checkInput} />
       </>
     );
   }
+  
   export default BookingPage;
