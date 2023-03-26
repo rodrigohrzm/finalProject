@@ -1,27 +1,21 @@
 import React, { useState } from 'react';
 import { submitAPI } from "./FetchAPI";
 import { useNavigate } from 'react-router';
+import { Link } from "react-router-dom"
+import {ReactComponent as Arrow} from './assets/Arrow.svg';
 
 function BookingForm({availabletimes, settimes}) {
 
-   let tempstyle = {
-      display: "grid",
-      marginLeft: "auto",
-      marginRight: "auto",
-      maxWidth: "1000px",
-      margin: "100px auto",
-      gap: "20px",
+   let goBackStyle = {
+      textDecoration: "none",
+      color:"#333333",
+      fontSize:"16px",
+      fontWeight: "bold",
    };
-   let submitstyle = {
-      width: "30vh",
-      marginLeft: "auto",
-      marginRight: "auto"
-   };
+
    // input:required:invalid,
-   // input:focus:invalid {
-   //   /* insert your own styles for invalid form input */}
-   // selected fields highlighted, return button from bookingpage previous page
-   //    <Link to=".." relative="path">
+   // input:focus:invalid {}
+   // selected fields highlighted
 
    const [ date , setDate ] = useState ("");
    const [ time , setTime ] = useState ("");
@@ -32,9 +26,10 @@ function BookingForm({availabletimes, settimes}) {
    const [ email , setEmail ] = useState ("");
 
    function auxchild(event) {
-      const newDate = event.target.value;
-      setDate(newDate);
-      settimes(newDate);
+      const dateSend = new Date(event.target.value);
+      const dateShow = event.target.value;
+      setDate(dateShow);
+      settimes(dateSend);
    }
    const navigate = useNavigate();
 
@@ -46,38 +41,35 @@ function BookingForm({availabletimes, settimes}) {
       }
 
     return (
-        <form style={tempstyle} onSubmit={handleSubmit}>
+      <form class="bookingForm" onSubmit={handleSubmit}>
+         <Link style={goBackStyle} to={".."}><Arrow class="cardIco" /> Go back</Link>
          <fieldset>
-            <label htmlFor="res-date">Choose date</label>
-               <input type="date" id="res-date" value={date} onChange={auxchild}/>
-            <label htmlFor="res-time">Choose time</label>
-               <select id="res-time" value={time} onChange={(e => setTime(e.target.value))}>
+            <label class="labelText" htmlFor="res-date">Choose date</label>
+               <input required type="date" id="res-date" value={date} onChange={auxchild}/>
+            <label class="labelText" htmlFor="res-time">Choose time</label>
+               <select required id="res-time" placeholder="time" value={time} onChange={(e => setTime(e.target.value))}>
                   {availabletimes.map((slot) => <option key={slot} value={slot}>{slot}</option>)}
                </select>
-         </fieldset>
-         <fieldset>
-            <label htmlFor="guests">Number of guests</label>
-               <input type="number" placeholder="1" min="1" max="10" id="guests" value={guests} onChange={(e => setGuests(e.target.value))} />
-            <label htmlFor="occasion">Type of occasion</label>
-               <select id="occasion" value={occasion} onChange={(e => setOccasion(e.target.value))}>
-                  <option key="default" value="" selected disabled hidden >Select</option>
+            <label class="labelText" htmlFor="guests">Number of guests</label>
+               <input required type="number" placeholder="number" min="1" max="10" id="guests" value={guests} onChange={(e => setGuests(e.target.value))} />
+            <label class="labelText" htmlFor="occasion">Type of occasion</label>
+               <select id="occasion" placeholder="select" value={occasion} onChange={(e => setOccasion(e.target.value))}>
+                  <option key="none" value="none" selected >None</option>
                   <option key="birthday" value="birthday" >Birthday</option>
-                  <option key="anniversary" value="anniversary" >Anniversary</option>
                   <option key="company" value="company" >Company event</option>
+                  <option key="other" value="other" >Other</option>
                </select>
-            <label>Location</label>
-               <input type="radio" id="outdoors" name="outdoors" value="outdoors" checked={location === "outdoors"} onChange={(e => setLocation(e.target.value))}/>
+            <label class="labelText" >Location</label>
+               <div required class="locationText"><input type="radio" id="outdoors" name="outdoors" value="outdoors" checked={location === "outdoors"} onChange={(e => setLocation(e.target.value))}/>
                   <label htmlFor="outdoors">Outdoors</label>
                <input type="radio" id="indoors" name="indoors" value="indoors" checked={location === "indoors"} onChange={(e => setLocation(e.target.value))}/>
-                  <label htmlFor="indoors">Indoors</label>
+                  <label class="locationText" htmlFor="indoors">Indoors</label></div>
+            <label class="labelText" htmlFor="fullname">Your full name</label>
+               <input required placeholder='name' minlength="3" type="text" id="fullname" value={fullname} onChange={(e => setFullname(e.target.value))}/>
+            <label class="labelText" htmlFor="email">Contact email</label>
+               <input required type="email" placeholder='email' id="email" value={email} onChange={(e => setEmail(e.target.value))}/>
          </fieldset>
-         <fieldset>
-            <label htmlFor="fullname">Your name</label>
-               <input required minlength="3" type="text" id="fullname" value={fullname} onChange={(e => setFullname(e.target.value))}/>
-            <label htmlFor="email">Contact email</label>
-               <input required type="email" id="email" value={email} onChange={(e => setEmail(e.target.value))}/>
-         </fieldset>
-        <button disabled={!occasion || !location || !guests || !time || !date} style={submitstyle} type="submit">Submit reservation</button>
+        <button type="submit">Submit reservation</button>
         </form>
     )};
 

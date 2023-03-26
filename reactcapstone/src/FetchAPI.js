@@ -9,13 +9,7 @@ const seededRandom = function(seed) {
 
 const fetchAPI = function(userInput) {
     let result = [];
-    const [year, month, day] = userInput.split('-')
-    const now = new Date();
-        const hour = now.getHours();
-        const minute = now.getMinutes();
-        const second = now.getSeconds();
-    const fulltime = new Date(year, month, day, hour, minute, second);
-    let random = seededRandom(fulltime);
+    let random = seededRandom(userInput);
 
     for(let i = 17; i <= 23; i++) {
         if(random() < 0.5) {
