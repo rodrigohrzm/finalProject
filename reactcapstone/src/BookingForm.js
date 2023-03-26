@@ -13,10 +13,6 @@ function BookingForm({availabletimes, settimes}) {
       fontWeight: "bold",
    };
 
-   // input:required:invalid,
-   // input:focus:invalid {}
-   // selected fields highlighted
-
    const [ date , setDate ] = useState ("");
    const [ time , setTime ] = useState ("");
    const [ guests , setGuests ] = useState ("");
